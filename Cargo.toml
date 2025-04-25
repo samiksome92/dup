@@ -1,0 +1,12 @@
+[package]
+name = "dup"
+version = "2.0.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.98"
+clap = { version = "4.5.37", features = ["derive"] }
+indicatif = "0.17.11"
+itertools = "0.14.0"
+tabled = "0.19.0"
+termsize = "0.1.9"

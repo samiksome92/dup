@@ -1,21 +1,23 @@
-# Dup
-
-Dup finds duplicate files in a list of given directories and optionally deletes any duplicates found.
+# dup
+A command line utility to detect duplicate files present in directories.
 
 ## Installation
-Either download a release directly from the [releases](https://github.com/samiksome92/dup/releases) page or use Go:
+Either download a release directly from the [releases](https://github.com/samiksome92/dup/releases) page or use `cargo`:
 
-    go install github.com/samiksome92/dup@latest
+    cargo install --git https://github.com/samiksome92/dup
 
 ## Usage
-	dup [flags] dir ...
+	dup [OPTIONS] <DIRS>...
 
-The flags are:
+Arguments:
 
-	-x, --cross       Cross check across directories.
-	-h, --help        Print this help.
-	-r, --recursive   Recursively check files.
+	<DIRS>...  Directory(s)
 
-Dup only compares files which have the same size. The files are compared byte for byte and marked as duplicates if they
-are same. Once all files are processed a table of duplicate files founds and their matches are displayed. The user is
-then provided with an option for deleting all duplicates detected.
+Options:
+
+	-x, --cross      Cross check across directories
+	-r, --recursive  Recursively check directories
+	-h, --help       Print help
+	-V, --version    Print version
+
+If `--cross` is specified only files across directories will be compared, otherwise files within a directory will also be compared with each other. `--recursive` recursively searches for files in directories. Once all files are processed a table of duplicate files founds and their matches are displayed. The user is then provided with an option for deleting all duplicates detected.
